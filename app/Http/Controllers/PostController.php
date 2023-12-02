@@ -51,9 +51,10 @@ class PostController extends Controller
         $post = new Post();
         $post->desc = $request->desc;
         // Menyimpan gambar jika ada
-        if ($request->hasFile('image_post')) {
-            $imagePath = $request->file('image_post')->store('images', 'public');
-            $post->image_post = $imagePath;
+        if ($request->hasFile('image_post')){
+            $request->file('image_post')->move('imagepost/', $request->file('image_post')->getClientOriginalName());
+            $post->image_post = $request->file('image_post')->getClientOriginalName();
+            
         }
         // Menyimpan ID pengguna yang membuat posting
         $post->user()->associate($user);

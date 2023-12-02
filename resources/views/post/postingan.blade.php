@@ -9,7 +9,9 @@
           @endif
 
           @error('image_post')
-               <p class="text-danger">{{$message}}</p>
+          <div class="text-danger ">
+              {{$message}}
+          </div>
           @enderror
             <div class="">
                 <p class="mx-4 mt-3 fw-bold header-post">Apa yang anda pikirkan ?</p>
@@ -43,7 +45,7 @@
                             <div class="col">
                                 @if ($p->image_post)
                                     <div class="image-container">
-                                        <img src="{{ asset('storage/' . $p->image_post) }}" class="img-fluid rounded-start preview-image" alt="...">
+                                        <img src="{{ asset('imagepost/' . $p->image_post) }}" class="img-fluid rounded-start preview-image" alt="...">
                                     </div>
                                 @else
                                     <p class="m-5">Tidak Mengupload Gambar</p>

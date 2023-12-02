@@ -12,25 +12,33 @@ class RegisterController extends Controller
     return view('register.register');
   }
 
-  public function registerStore(Request $request){
-    $validasi = $request->validate([
-       'name'=>'required',
-       'image'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-       'email'=>'required|email|unique:users',
-       'password'=>'required'
-    ]);
-     // Menghandle upload gambar
-     if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $imageName = time().'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('uploads'), $imageName);
-        $validasi['image'] = $imageName;
-    }
-
-    $validasi['password'] = Hash::make($validasi['password']);
-    User::create($validasi);
-   return redirect()->back()->with('success', 'register berhasil silahkan login');
+  public function registerStore(Request $request)
+  {
+      $validasi = $request->validate([
+          'name' => 'required',
+          'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+          'email' => 'required|email|unique:users',
+          'password' => 'required',
+      ]);
+  
+      // Menghandle upload gambar
+      if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $imageName = time() . '.' . $image->getClientOriginalExtension();
+  
+          // Simpan gambar di direktori yang diinginkan
+          $image->move(public_path('uploads'), $imageName);
+  
+          // Simpan nama file gambar dalam database
+          $validasi['image'] = $imageName;
+      }
+  
+      $validasi['password'] = Hash::make($validasi['password']);
+      User::create($validasi);
+  
+      return redirect()->back()->with('success', 'Registrasi berhasil, silahkan login');
   }
+  
 
 
   public function setting($id){
