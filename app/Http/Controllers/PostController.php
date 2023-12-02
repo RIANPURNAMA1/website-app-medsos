@@ -42,7 +42,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image_post' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_post' => 'image|mimes:jpeg,png,jpg,gif|max:5048',
             'desc' => 'required|string |max:428',
         ]);
 

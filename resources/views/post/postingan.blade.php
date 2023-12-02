@@ -7,6 +7,10 @@
               {{session('success')}}
             </div>
           @endif
+
+          @error('image_post')
+               <p class="text-danger">{{$message}}</p>
+          @enderror
             <div class="">
                 <p class="mx-4 mt-3 fw-bold header-post">Apa yang anda pikirkan ?</p>
                 <form action="/store" method="post" enctype="multipart/form-data">
