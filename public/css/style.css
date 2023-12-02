@@ -1,0 +1,171 @@
+.navbar-brand,
+.nav-link{
+    color: rebeccapurple !important;
+}
+.navbar{
+    background-color: rgb(0, 0, 20) !important;
+}
+
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+body{
+    scroll-behavior: smooth;
+    background-color: rgb(0, 0, 8) !important;
+    color: white !important;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.header-post{
+    color: rebeccapurple !important;
+}
+.img-fluid{
+    object-fit: cover !important;
+}
+.image-profile,
+.image-beranda{
+    background-position: center;
+    background-size: cover;
+    object-fit: cover !important;
+}
+.card-profile{
+    background-color: rgb(0, 0, 20) !important ;
+    color: white !important;
+}
+.btn-search{
+    background-color: rebeccapurple !important;
+    color: wheat !important;
+}
+.form,
+.card-post{
+    border: none !important;
+    background-color: rgba(255, 255, 255, 0.009) !important;
+    color: white !important;
+
+}
+hr{
+    display: none !important;
+}
+.text-profile{
+    color: rebeccapurple !important  ;
+}
+.card-body.button-beranda {
+    display: inline-block;
+    padding:  16px 0;
+    justify-content: space-between;
+}
+.button-beranda a{
+    margin: 5px 0;
+}
+
+.active{
+    color: white !important;
+}
+.container-footer{
+    padding-top: 4rem;
+}
+
+.footer{
+ background: linear-gradient( to left,  rgb(0, 0, 8), rgb(1, 1, 93) );
+ color:aliceblue !important;
+
+ padding: 5px;
+
+}
+.text-footer{
+    color: #ffffff !important;
+}
+.nav-toggle{
+    margin-right: -10rem ;
+}
+
+.profile-image-container {
+    display: block; /* By default, display the container */
+}
+.profile-image-container-nav {
+    display: none; /* By default, display the container */
+}
+
+
+/* Add this to your existing CSS file or style section */
+.image-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.preview-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity as needed */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preview-image {
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow for better visibility */
+}
+
+.card-images-pref{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 3rem;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    bottom: 0;
+    filter: blur(8px);
+    background-color: rgb(0, 0, 0) !important;
+    display: none;
+}
+.image-beranda-pref{
+   z-index: 99;
+   margin-top: -3rem;
+   position: absolute;
+   top: 0;
+   width: 300px !important;
+   height: 300px !important;
+   object-fit: cover;
+   border-radius: 50% !important;
+   left: 0;
+   right: 0;
+   display: none;
+   bottom: 0;
+}
+.buka{
+    display: block;
+}
+
+/* Hide the container on screens with a max-width of 768 pixels (adjust as needed) */
+@media (max-width: 768px) {
+    .profile-image-container {
+        display: none;
+    }
+    .profile-image-container-nav {
+        display: block; /* By default, display the container */
+    }
+}
+/* Media query untuk layar berukuran kecil (mobile) */
+@media (max-width: 767px) {
+    .button-beranda{
+        padding-left: 2rem !important;
+    }
+
+}
+
+
